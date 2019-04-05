@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: internet-access
+spec:
+  podSelector:
+    matchLabels:
+      networking/allow-internet-access: "true"
+  policyTypes:
+  - Ingress
+  ingress:
+  - {}
